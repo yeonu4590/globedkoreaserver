@@ -26,7 +26,7 @@ export default function Home() {
     fetchPing();
     fetchUsers();
     const pingInterval = setInterval(fetchPing, 1000);
-    const userInterval = setInterval(fetchUsers, 5000);
+    const userInterval = setInterval(fetchUsers, 1000);
 
     return () => {
       clearInterval(pingInterval);
@@ -50,8 +50,14 @@ export default function Home() {
           backgroundColor: "#1f1f1f",
           padding: "20px",
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
+        <div style={{ color: "#d1d1d1", fontSize: "24px", fontWeight: "600" }}>
+          Globed Korea Server
+        </div>
         <nav
           style={{
             display: "flex",
@@ -85,17 +91,20 @@ export default function Home() {
           </Link>
         </nav>
       </header>
+
       <section
-          style={{
-            backgroundImage: `url(${banner.src})`, // Use banner.src to access the correct URL
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-            border: 0,
-            padding: 0,
-            margin: 0,
-            height: "90%"
-          }}
-        />
+        style={{
+          backgroundImage: `url(${banner.src})`,
+          backgroundPositionX: "center",
+          border: 0,
+          padding: 0,
+          margin: 0,
+          aspectRatio: "3/1",
+          width: "100vw",
+          backgroundSize: "cover",
+        }}
+      />
+
       <main
         style={{
           display: "flex",
@@ -162,7 +171,9 @@ export default function Home() {
           }}
         >
           <div style={{ textAlign: "center" }}>
-            <span style={{ marginBottom: "10px" }}>현재 접속자 : {users}명</span>
+            <span style={{ marginBottom: "10px" }}>
+              현재 접속자 : {users}명
+            </span>
           </div>
           <div style={{ textAlign: "center" }}>
             <span>ping: {ping}</span>
