@@ -134,7 +134,7 @@ export default function Home() {
             marginBottom: "20px",
           }}
         >
-          http://globedkoreaserver.shop
+          http://gd.globedkoreaserver.shop
         </div>
 
         <big
