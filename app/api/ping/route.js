@@ -1,7 +1,7 @@
 import ping from "ping";
 
 export async function GET() {
-  const host = "118.44.109.78";
+  const host = "roblox.com";
   try {
     const result = await ping.promise.probe(host);
     const pingTime =

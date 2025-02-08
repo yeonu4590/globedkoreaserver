@@ -134,7 +134,7 @@ export default function Home() {
             marginBottom: "20px",
           }}
         >
-          http://222.113.87.101:4201
+          http://globedkoreaserver.shop
         </div>
 
         <big
