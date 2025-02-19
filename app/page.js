@@ -8,31 +8,31 @@ export default function Home() {
   const [ping, setPing] = useState("측정 중...");
   const [users, setUsers] = useState("알 수 없음");
 
-  useEffect(() => {
-    const fetchPing = () => {
-      fetch("/api/ping")
-        .then((res) => res.json())
-        .then((data) => setPing(data.ping))
-        .catch(() => setPing("측정 실패"));
-    };
+  const checkPing = async () => {
+    return new Promise((resolve) => {
+      const rtc = new RTCPeerConnection({
+        iceServers: [{ urls: "stun:gd.globedkoreaserver.shop:4201" }]
+      });
+      
+      const startTime = performance.now();
 
-    const fetchUsers = () => {
-      fetch("/api/status")
-        .then((res) => res.json())
-        .then((data) => setUsers(data.onlineUsers))
-        .catch(() => setUsers("알 수 없음"));
-    };
+      rtc.createDataChannel(""); 
+      rtc.createOffer().then((offer) => rtc.setLocalDescription(offer));
 
-    fetchPing();
-    fetchUsers();
-    const pingInterval = setInterval(fetchPing, 1000);
-    const userInterval = setInterval(fetchUsers, 1000);
+      rtc.onicecandidate = (event) => {
+        if (event.candidate) {
+          const endTime = performance.now();
+          resolve((endTime - startTime).toFixed(2) + " ms");
+          rtc.close();
+        }
+      };
 
-    return () => {
-      clearInterval(pingInterval);
-      clearInterval(userInterval);
-    };
-  }, []);
+      setTimeout(() => {
+        rtc.close();
+        resolve("측정 실패");
+      }, 1000);
+    });
+  };
 
   return (
     <div
@@ -67,7 +67,7 @@ export default function Home() {
           }}
         >
           <Link
-            href="/info"
+            href=""
             style={{
               color: "#d1d1d1",
               textDecoration: "none",
@@ -78,7 +78,7 @@ export default function Home() {
             정보
           </Link>
           <Link
-            href="https://discord.com"
+            href="https://discord.gg/C5ZHxtMhTA"
             target="_blank"
             style={{
               color: "#d1d1d1",
@@ -134,7 +134,7 @@ export default function Home() {
             marginBottom: "20px",
           }}
         >
-          http://gd.globedkoreaserver.shop
+          http://gd.globedkoreaserver.shop:4201
         </div>
 
         <big
@@ -171,9 +171,7 @@ export default function Home() {
           }}
         >
           <div style={{ textAlign: "center" }}>
-            <span style={{ marginBottom: "10px" }}>
-              현재 접속자 : {users}명
-            </span>
+            <span style={{ marginBottom: "10px" }}>현재 접속자 : {users}명</span>
           </div>
           <div style={{ textAlign: "center" }}>
             <span>ping: {ping}</span>
