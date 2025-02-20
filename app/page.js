@@ -67,7 +67,7 @@ export default function Home() {
           }}
         >
           <Link
-            href="/info"
+            href="https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92"
             style={{
               color: "#d1d1d1",
               textDecoration: "none",
