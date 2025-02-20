@@ -120,6 +120,7 @@ export default function Home() {
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       >
+        <h1>v.Beta0.1</h1>
         <div
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.1)",
