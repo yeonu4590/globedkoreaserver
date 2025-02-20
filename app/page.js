@@ -1,33 +1,64 @@
 "use client";
 import { useEffect, useState } from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import Ping from "ping.js";
 import Head from "next/head";
 import Link from "next/link";
-import background from "./background.jpg";
 import banner from "./banner.jpg";
+import background from "./background.jpg";
 
 export default function Home() {
   const [ping, setPing] = useState("측정 중...");
   const [users, setUsers] = useState("알 수 없음");
+  const [pingData, setPingData] = useState([]);
+  const [usersData, setUsersData] = useState([]);
 
   useEffect(() => {
-    const fetchPing = () => {
-      fetch("/api/ping")
-        .then((res) => res.json())
-        .then((data) => setPing(data.ping))
-        .catch(() => setPing("측정 실패"));
+    const p = new Ping();
+
+    const fetchPing = async () => {
+      const startTime = performance.now();
+      try {
+        await fetch("http://gd.globedkoreaserver.shop:4201", {
+          mode: "no-cors",
+        });
+        const endTime = performance.now();
+        const latency = Math.round(endTime - startTime);
+        setPing(latency + " ms");
+        setPingData((prevData) => [
+          ...prevData,
+          { time: new Date().toLocaleTimeString(), ping: latency },
+        ]);
+      } catch (err) {
+        setPing("오류");
+      }
     };
 
     const fetchUsers = () => {
       fetch("/api/status")
         .then((res) => res.json())
-        .then((data) => setUsers(data.onlineUsers))
+        .then((data) => {
+          setUsers(data.onlineUsers);
+          setUsersData((prevData) => [
+            ...prevData,
+            { time: new Date().toLocaleTimeString(), users: data.onlineUsers },
+          ]);
+        })
         .catch(() => setUsers("알 수 없음"));
     };
 
-    fetchPing();
-    fetchUsers();
-    const pingInterval = setInterval(fetchPing, 1000);
-    const userInterval = setInterval(fetchUsers, 1000);
+    fetchPing(); 
+    fetchUsers(); 
+    const pingInterval = setInterval(fetchPing, 2000);
+    const userInterval = setInterval(fetchUsers, 2000);
 
     return () => {
       clearInterval(pingInterval);
@@ -202,15 +233,110 @@ export default function Home() {
             justifyContent: "center",
             alignItems: "center",
             gap: "20px",
+            width: "80vw",
+            whiteSpace: "normal",
           }}
         >
-          <div style={{ textAlign: "center" }}>
-            <span style={{ marginBottom: "10px" }}>
-              현재 접속자 : {users}명
-            </span>
+          <div style={{ textAlign: "center", width: "80vw" }}>
+            <div>
+              <p style={{ borderBottom: "20px" }}>ping: {ping}</p>
+              <ResponsiveContainer
+                style={{ paddingTop: "16px", paddingRight: "30px" }}
+                className={"card"}
+                width="100%"
+                height="100%"
+                minHeight={300}
+              >
+                <LineChart data={pingData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#ffffff15" />
+                  <XAxis
+                    dataKey="time"
+                    stroke="#ccc"
+                    axisLine={false}
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis
+                    stroke="#ccc"
+                    axisLine={false}
+                    tick={{ fontSize: 12 }}
+                  />
+                  <Tooltip
+                    wrapperStyle={{
+                      backgroundColor: "#333",
+                      color: "#fff",
+                      borderRadius: "5px",
+                      padding: "10px",
+                    }}
+                    labelStyle={{ fontWeight: "bold" }}
+                    itemStyle={{ fontSize: "14px" }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="ping"
+                    stroke="#82ca9d"
+                    strokeWidth={5}
+                    dot={{ r: 0 }}
+                    activeDot={{
+                      r: 6,
+                      stroke: "#82ca9d",
+                      strokeWidth: 2,
+                    }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
           </div>
-          <div style={{ textAlign: "center" }}>
-            <span>ping: {ping}</span>
+          <br />
+          <div style={{ textAlign: "center", width: "80vw" }}>
+            <div>
+              <p style={{ borderBottom: "20px" }}>
+                connected user: {users}
+              </p>
+              <ResponsiveContainer
+                style={{ paddingTop: "16px", paddingRight: "30px" }}
+                className={"card"}
+                width="100%"
+                height="100%"
+                minHeight={300}
+              >
+                <LineChart data={usersData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#ffffff15" />
+                  <XAxis
+                    dataKey="time"
+                    stroke="#ccc"
+                    axisLine={false}
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis
+                    stroke="#ccc"
+                    axisLine={false}
+                    tick={{ fontSize: 12 }}
+                  />
+                  <Tooltip
+                    wrapperStyle={{
+                      backgroundColor: "#333",
+                      color: "#fff",
+                      borderRadius: "5px",
+                      padding: "10px",
+                    }}
+                    labelStyle={{ fontWeight: "bold" }}
+                    itemStyle={{ fontSize: "14px" }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="users"
+                    stroke="#82ca9d"
+                    strokeWidth={5}
+                    dot={{ r: 0 }}
+                    activeDot={{
+                      r: 6,
+                      stroke: "#82ca9d",
+                      strokeWidth: 2,
+                    }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </section>
       </main>
