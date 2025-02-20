@@ -72,6 +72,10 @@ export default function Home() {
           name="google-site-verification"
           content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E"
         />
+        <meta
+          name="naver-site-verification"
+          content="13ea3d8a2959e4eb2dbbdf60d24691e71300fcec"
+        />
       </Head>
 
       <header
