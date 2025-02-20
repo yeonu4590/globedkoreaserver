@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Globed Korea Server",
+  title: "Globed Korea Server"
 };
 
 export default function RootLayout({ children }) {
