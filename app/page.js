@@ -52,7 +52,7 @@ export default function Home() {
             { time: new Date().toLocaleTimeString(), users: data.onlineUsers },
           ]);
         })
-        .catch(() => setUsers("알 수 없음"));
+        .catch(() => setUsers("오류"));
     };
 
     fetchPing(); 
