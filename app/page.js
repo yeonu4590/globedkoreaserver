@@ -46,18 +46,32 @@ export default function Home() {
         fontFamily: "'Roboto', sans-serif",
       }}
     >
-      {/* ✅ SEO 최적화 Head 태그 추가 */}
       <Head>
         <title>Globed Korea Server - Beta 0.1</title>
-        <meta name="description" content="Globed Korea Server의 공식 웹사이트입니다. 서버 상태 및 정보를 확인하세요." />
-        <meta name="keywords" content="Globed Korea, 게임 서버, 지오메트리대쉬, 서버 상태, 디스코드" />
+        <meta
+          name="description"
+          content="Globed Korea Server의 공식 웹사이트입니다. 서버 상태 및 정보를 확인하세요."
+        />
+        <meta
+          name="keywords"
+          content="Globed Korea, 게임 서버, 지오메트리대쉬, 서버 상태, 디스코드"
+        />
         <meta name="author" content="이연우 & QuverT" />
         <meta property="og:title" content="Globed Korea Server" />
-        <meta property="og:description" content="Globed Korea Server의 공식 웹사이트입니다." />
+        <meta
+          property="og:description"
+          content="Globed Korea Server의 공식 웹사이트입니다."
+        />
         <meta property="og:image" content="/banner.jpg" />
-        <meta property="og:url" content="http://gd.globedkoreaserver.shop:4201" />
+        <meta
+          property="og:url"
+          content="http://gd.globedkoreaserver.shop:4201"
+        />
         <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E" />
+        <meta
+          name="google-site-verification"
+          content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E"
+        />
       </Head>
 
       <header
