@@ -57,6 +57,7 @@ export default function Home() {
         <meta property="og:image" content="/banner.jpg" />
         <meta property="og:url" content="http://gd.globedkoreaserver.shop:4201" />
         <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E" />
       </Head>
 
       <header
