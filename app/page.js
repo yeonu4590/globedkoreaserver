@@ -15,9 +15,7 @@ export default function Home() {
     const fetchPing = () => {};
 
     const fetchUsers = () => {
-      fetch(
-        "http://gd.globedkoreaserver.shop:4201/public/players?period=minute"
-      )
+      fetch("/api/users") // 원래의 서버 URL이 아니라 Next.js에서 처리
         .then((res) => res.json())
         .then((data) => {
           if (data.data && data.data.length > 0) {
@@ -36,8 +34,7 @@ export default function Home() {
           setUsers("오류");
         });
     };
-
-    // Run fetchPing and fetchUsers initially
+    
     fetchPing();
     fetchUsers();
 
@@ -223,7 +220,12 @@ export default function Home() {
         >
           <p>ping: {ping}</p>
           <br />
-          <p>connected user: {users} <span style={{ color: "gray" }}>{"<= 이거는 1분마다 한번씩 바뀌어요 (근데 조만간 2초로 바뀜)"}</span></p>
+          <p>
+            connected user: {users}{" "}
+            <span style={{ color: "gray" }}>
+              {"<= 이거는 1분마다 한번씩 바뀌어요 (근데 조만간 2초로 바뀜)"}
+            </span>
+          </p>
         </section>
       </main>
     </div>
