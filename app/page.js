@@ -34,7 +34,7 @@ export default function Home() {
           setUsers("오류");
         });
     };
-    
+
     fetchPing();
     fetchUsers();
 
@@ -223,7 +223,10 @@ export default function Home() {
           <p>
             connected user: {users}{" "}
             <span style={{ color: "gray" }}>
-              {"<= 이거는 1분마다 한번씩 바뀌어요 (근데 조만간 2초로 바뀜)"}
+              {"아니 왜 오류 계속나"}<br></br>
+              {"vercel로 배포했고 next.js입니다."}<br></br>
+              {"그냥 실행하면 되는데 배포본만 오류가 나요 ㅠㅠ"}<br></br>
+              {"왜인지 아시는분은 제 디코로 연락 주세요 (lyw0720)"}
             </span>
           </p>
         </section>
