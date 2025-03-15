@@ -16,3 +16,49 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 화면 크기가 768px 이상일 때 */
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+  }
+
+  .header {
+    text-align: left;
+    padding: 20px;
+  }
+
+  .container {
+    padding: 40px;
+  }
+}
+
+/* 화면 크기가 1024px 이상일 때 */
+@media (min-width: 1024px) {
+  .header {
+    padding: 30px;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
