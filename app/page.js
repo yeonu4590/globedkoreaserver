@@ -54,6 +54,10 @@ export default function Home() {
             style={{ color: "#d1d1d1", textDecoration: "none", fontWeight: "500", transition: "color 0.3s ease" }}>
             유튜브
           </Link>
+          <Link href="https://discord.com/invite/C5ZHxtMhTA" target="_blank"
+            style={{ color: "#d1d1d1", textDecoration: "none", fontWeight: "500", transition: "color 0.3s ease" }}>
+            디스코드
+          </Link>
         </nav>
       </header>
 
