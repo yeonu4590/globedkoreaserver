@@ -16,6 +16,7 @@ export default function Home() {
         fontFamily: "'Roboto', sans-serif",
         width: "100%",
         boxSizing: "border-box",
+        backgroundAttachment: "fixed",
       }}
     >
       <Head>
@@ -96,6 +97,7 @@ export default function Home() {
           backgroundPosition: "center",
           minHeight: "calc(100vh - 1000px)",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundAttachment: "fixed",
         }}
       >
         <div
