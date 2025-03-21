@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import banner from "./banner.jpg";
+import Script from "next/script";
 import background from "./background.jpg";
 
 export default function Home() {
@@ -20,17 +21,34 @@ export default function Home() {
     >
       <Head>
         <title>Globed Korea Server</title>
-        <meta name="google-adsense-account" content="ca-pub-7055390268616116"></meta>
-        <meta name="description" content="Globed Korea Server의 공식 웹사이트입니다. 서버 상태 및 정보를 확인하세요." />
-        <meta name="keywords" content="Globed Korea, 게임 서버, 지오메트리대쉬, 서버 상태, 디스코드" />
+        <meta
+          name="description"
+          content="Globed Korea Server의 공식 웹사이트입니다. 서버 상태 및 정보를 확인하세요."
+        />
+        <meta
+          name="keywords"
+          content="Globed Korea, 게임 서버, 지오메트리대쉬, 서버 상태, 디스코드"
+        />
         <meta name="author" content="이연우 & QuverT" />
         <meta property="og:title" content="Globed Korea Server" />
-        <meta property="og:description" content="Globed Korea Server의 공식 웹사이트입니다." />
+        <meta
+          property="og:description"
+          content="Globed Korea Server의 공식 웹사이트입니다."
+        />
         <meta property="og:image" content="/banner.jpg" />
-        <meta property="og:url" content="http://gd.globedkoreaserver.shop:4201" />
+        <meta
+          property="og:url"
+          content="http://gd.globedkoreaserver.shop:4201"
+        />
         <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E" />
-        <meta name="naver-site-verification" content="13ea3d8a2959e4eb2dbbdf60d24691e71300fcec" />
+        <meta
+          name="google-site-verification"
+          content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E"
+        />
+        <meta
+          name="naver-site-verification"
+          content="13ea3d8a2959e4eb2dbbdf60d24691e71300fcec"
+        />
       </Head>
 
       <header
@@ -47,16 +65,39 @@ export default function Home() {
           Globed Korea Server
         </div>
         <nav style={{ display: "flex", gap: "30px", fontSize: "16px" }}>
-          <Link href="https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92"
-            style={{ color: "#d1d1d1", textDecoration: "none", fontWeight: "500", transition: "color 0.3s ease" }}>
+          <Link
+            href="https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92"
+            style={{
+              color: "#d1d1d1",
+              textDecoration: "none",
+              fontWeight: "500",
+              transition: "color 0.3s ease",
+            }}
+          >
             정보
           </Link>
-          <Link href="https://www.youtube.com/@GlobedKoreaServer" target="_blank"
-            style={{ color: "#d1d1d1", textDecoration: "none", fontWeight: "500", transition: "color 0.3s ease" }}>
+          <Link
+            href="https://www.youtube.com/@GlobedKoreaServer"
+            target="_blank"
+            style={{
+              color: "#d1d1d1",
+              textDecoration: "none",
+              fontWeight: "500",
+              transition: "color 0.3s ease",
+            }}
+          >
             유튜브
           </Link>
-          <Link href="https://discord.com/invite/C5ZHxtMhTA" target="_blank"
-            style={{ color: "#d1d1d1", textDecoration: "none", fontWeight: "500", transition: "color 0.3s ease" }}>
+          <Link
+            href="https://discord.com/invite/C5ZHxtMhTA"
+            target="_blank"
+            style={{
+              color: "#d1d1d1",
+              textDecoration: "none",
+              fontWeight: "500",
+              transition: "color 0.3s ease",
+            }}
+          >
             디스코드
           </Link>
         </nav>
@@ -118,8 +159,32 @@ export default function Home() {
           http://gd.globedkoreaserver.shop:4201
         </div>
         <h1>v.Beta0.1</h1>
-        <div style={{ color: "#a0aec0", fontSize: "1rem" }}>Since 2025.01.27</div>
-        <small style={{ color: "#a0aec0", fontSize: "0.9rem" }}>Frontend by 이연우<br />Backend by QuverT</small>
+        <div style={{ color: "#a0aec0", fontSize: "1rem" }}>
+          Since 2025.01.27
+        </div>
+        <small style={{ color: "#a0aec0", fontSize: "0.9rem" }}>
+          Owner : 이연우
+          <br />
+          Developer : QuverT, 이연우
+        </small>
+        <br />
+        <small style={{ color: "#a0aec0", fontSize: "0.9rem" }}>
+          Mod : 이연우, QuverT, DDOS
+          <br />
+          Admin : Ulbo767
+        </small>
+        <br />
+        <Script
+          src="https://apis.google.com/js/platform.js"
+          strategy="lazyOnload"
+        />
+
+        <div
+          className="g-ytsubscribe"
+          data-channelid="UCotH0xSYNno4_C-cFL9t1Sg"
+          data-layout="default"
+          data-count="default"
+        ></div>
       </main>
 
       <footer
@@ -131,11 +196,6 @@ export default function Home() {
         }}
       >
         <p>&copy; 2025 Globed Korea Server. All Rights Reserved.</p>
-        <nav style={{ display: "flex", justifyContent: "center", gap: "20px", fontSize: "14px" }}>
-          <Link href="/privacy" style={{ color: "#d1d1d1", textDecoration: "none" }}>Privacy Policy</Link>
-          <Link href="/terms" style={{ color: "#d1d1d1", textDecoration: "none" }}>Terms of Service</Link>
-          <Link href="/contact" style={{ color: "#d1d1d1", textDecoration: "none" }}>Contact</Link>
-        </nav>
       </footer>
     </div>
   );
