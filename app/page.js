@@ -19,7 +19,8 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>Globed Korea Server - Beta 0.1</title>
+        <title>Globed Korea Server</title>
+        <meta name="google-adsense-account" content="ca-pub-7055390268616116"></meta>
         <meta name="description" content="Globed Korea Server의 공식 웹사이트입니다. 서버 상태 및 정보를 확인하세요." />
         <meta name="keywords" content="Globed Korea, 게임 서버, 지오메트리대쉬, 서버 상태, 디스코드" />
         <meta name="author" content="이연우 & QuverT" />
