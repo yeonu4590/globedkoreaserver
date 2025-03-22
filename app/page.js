@@ -22,25 +22,9 @@ export default function Home() {
       <Head>
         <title>Globed Korea Server</title>
         <meta
-          name="description"
-          content="Globed Korea Server의 공식 웹사이트입니다. 서버 상태 및 정보를 확인하세요."
-        />
-        <meta
-          name="keywords"
-          content="Globed Korea, 게임 서버, 지오메트리대쉬, 서버 상태, 디스코드"
-        />
-        <meta name="author" content="이연우 & QuverT" />
-        <meta property="og:title" content="Globed Korea Server" />
-        <meta
-          property="og:description"
-          content="Globed Korea Server의 공식 웹사이트입니다."
-        />
-        <meta property="og:image" content="/banner.jpg" />
-        <meta
           property="og:url"
           content="http://gd.globedkoreaserver.shop:4201"
         />
-        <meta name="robots" content="index, follow" />
         <meta
           name="google-site-verification"
           content="A5xXpJo-JckIPvkOE6MLLILgGviKKsMNH50eTy9_74E"
@@ -141,6 +125,8 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
+        <big>이 서버는 dank_meme에 의해 만들어지거나 승인받지 않았습니다.</big>
+        <br />
         <div
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -185,6 +171,88 @@ export default function Home() {
           data-layout="default"
           data-count="default"
         ></div>
+        <br />
+
+        <section
+          style={{
+            background: "#1e1e1e", // dark background
+            width: "80vw",
+            color: "white", // text color adjusted for dark mode
+            borderRadius: "10px", // rounded corners
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)", // deeper shadow for dark mode
+            padding: "20px",
+            margin: "20px auto", // centering the section
+          }}
+        >
+          <div
+            style={{
+              height: "100px",
+              background: "#333", // darker header background for contrast
+              borderRadius: "8px", // rounded corners
+              display: "flex",
+              justifyContent: "center", // centering text
+              alignItems: "center", // centering text vertically
+              color: "white", // light text on dark background
+            }}
+          >
+            <big style={{ fontSize: "2rem", margin: "0" }}>
+              항상 후원 너무 감사드립니다
+            </big>
+          </div>
+          <div
+            style={{
+              textAlign: "center", // centering the content
+              marginTop: "20px",
+            }}
+          >
+            <big>
+              <big>
+                <Link
+                  href={"https://toon.at/donate/globedkoreaserve"}
+                  style={{
+                    color: "#fff", // bright blue for contrast
+                    fontSize: "1.2rem",
+                    textDecoration: "none",
+                    padding: "10px 20px", // add some padding for a button-like feel
+                    borderRadius: "5px", // rounded corners for a smooth look
+                    backgroundColor: "#333", // dark background for dark mode
+                    border: "1px solid #444", // subtle border for visibility
+                    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)", // slight shadow for depth
+                    transition: "background-color 0.3s, box-shadow 0.3s", // smooth transition on hover
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#444"; // slightly lighter on hover
+                    e.target.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.5)"; // deeper shadow on hover
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "#333"; // revert back to dark background
+                    e.target.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)"; // revert shadow
+                  }}
+                >
+                  투네이션
+                </Link><br />
+              </big>
+            </big>
+            <br />
+          </div>
+          <iframe
+            width={"80%"}
+            frameBorder="0"
+            src="https://toon.at/widget/donation_goal/aa01d12e98b9aa672e50848c45dab559"
+          ></iframe>
+          <br />
+          <iframe
+            width={"80%"}
+            frameBorder="0"
+            src="https://toon.at/widget/ranking/aa01d12e98b9aa672e50848c45dab559"
+          ></iframe>
+          <br />
+          <iframe
+            width={"80%"}
+            frameBorder="0"
+            src="https://toon.at/widget/wallpaper/aa01d12e98b9aa672e50848c45dab559"
+          ></iframe>
+        </section>
       </main>
 
       <footer
