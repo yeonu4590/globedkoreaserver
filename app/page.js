@@ -1,9 +1,10 @@
 "use client";
 import Head from "next/head";
 import Link from "next/link";
-import banner from "./banner.jpg";
 import Script from "next/script";
+import banner from "./banner.jpg";
 import background from "./background.jpg";
+
 export default function Home() {
   return (
     <div
@@ -11,11 +12,11 @@ export default function Home() {
         backgroundColor: "#121212",
         color: "white",
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
         fontFamily: "'Roboto', sans-serif",
         width: "100%",
         boxSizing: "border-box",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Head>
@@ -34,6 +35,7 @@ export default function Home() {
         />
       </Head>
 
+      {/* HEADER */}
       <header
         style={{
           backgroundColor: "#1f1f1f",
@@ -48,66 +50,50 @@ export default function Home() {
           Globed Korea Server
         </div>
         <nav style={{ display: "flex", gap: "30px", fontSize: "16px" }}>
-          <Link
-            href="https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92"
-            style={{
-              color: "#d1d1d1",
-              textDecoration: "none",
-              fontWeight: "500",
-              transition: "color 0.3s ease",
-            }}
-          >
-            정보
-          </Link>
-          <Link
-            href="https://www.youtube.com/@GlobedKoreaServer"
-            target="_blank"
-            style={{
-              color: "#d1d1d1",
-              textDecoration: "none",
-              fontWeight: "500",
-              transition: "color 0.3s ease",
-            }}
-          >
-            유튜브
-          </Link>
-          <Link
-            href="https://discord.com/invite/C5ZHxtMhTA"
-            target="_blank"
-            style={{
-              color: "#d1d1d1",
-              textDecoration: "none",
-              fontWeight: "500",
-              transition: "color 0.3s ease",
-            }}
-          >
-            디스코드
-          </Link>
-          <Link
-            href="https://toon.at/donate/globedkoreaserve"
-            target="_blank"
-            style={{
-              color: "#d1d1d1",
-              textDecoration: "none",
-              fontWeight: "500",
-              transition: "color 0.3s ease",
-            }}
-          >
-            투네이션
-          </Link>
+          {[
+            {
+              name: "정보",
+              url: "https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92",
+            },
+            {
+              name: "유튜브",
+              url: "https://www.youtube.com/@GlobedKoreaServer",
+            },
+            { name: "디스코드", url: "https://discord.com/invite/C5ZHxtMhTA" },
+            {
+              name: "투네이션",
+              url: "https://toon.at/donate/globedkoreaserve",
+            },
+          ].map(({ name, url }) => (
+            <Link
+              key={name}
+              href={url}
+              target="_blank"
+              style={{
+                color: "#d1d1d1",
+                textDecoration: "none",
+                fontWeight: "500",
+                transition: "color 0.3s ease",
+              }}
+            >
+              {name}
+            </Link>
+          ))}
         </nav>
       </header>
 
+      {/* BANNER */}
       <section
         style={{
           backgroundImage: `url(${banner.src})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           width: "100%",
-          aspectRatio: "3/1",
+          aspectRatio: "3 / 1",
         }}
       />
 
+      {/* DISCORD WIDGET */}
       <iframe
         src="https://discord.com/widget?id=1333348250131890219&theme=dark"
         width="100%"
@@ -117,10 +103,10 @@ export default function Home() {
         style={{
           maxWidth: "100%",
           borderRadius: "0px",
-          overflow: "hidden",
         }}
       ></iframe>
 
+      {/* MAIN CONTENT */}
       <main
         style={{
           display: "flex",
@@ -131,13 +117,12 @@ export default function Home() {
           backgroundImage: `url(${background.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "calc(100vh - 1000px)",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
           backgroundAttachment: "fixed",
         }}
       >
-        <big>이 서버는 dank_meme에 의해 만들어지거나 승인받지 않았습니다.</big>
-        <br />
+        <p>이 서버는 dank_meme에 의해 만들어지거나 승인받지 않았습니다.</p>
+
         <div
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -155,6 +140,7 @@ export default function Home() {
         >
           http://gd.globedkoreaserver.shop:4201
         </div>
+
         <h1>v.Beta0.1</h1>
         <div style={{ fontSize: "1.3rem" }}>Since 2025.01.27</div>
         <small style={{ fontSize: "0.9rem" }}>
@@ -162,140 +148,36 @@ export default function Home() {
           <br />
           Developer : QuverT, 이연우
         </small>
-        <br />
+
         <div className="divider" />
 
-        <div>
-          <span>
-            <div
-              style={{
-                display: "inline-block", // ✅ 추가
-                backgroundImage: `url('./imgs/modtext.png')`,
-                height: "50px",
-                width: "100%",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-            <div
-              style={{
-                display: "inline-block", // ✅ 추가
-                backgroundImage: `url('./imgs/KakaoTalk_20250405_215329281_01.jpg')`,
-                height: "50px",
-                width: "50px",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                borderRadius: "50%",
-              }}
-            />
-          </span>
-          <br />
-          이연우, QuverT, DDOS
-        </div>
+        <Section
+          titleImage="./imgs/modtext.png"
+          names="이연우, QuverT, DDOS"
+          avatars={["./imgs/KakaoTalk_20250405_215329281_01.jpg"]}
+          images={["./imgs/1.png", "./imgs/2.png", "./imgs/4.png"]}
+        />
 
-        <br />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: "10px",
-          }}
-        >
-          <div
-            style={{
-              width: 100,
-              height: 100,
-              backgroundImage: "url('./imgs/1.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              boxShadow: "0 0 15px rgba(255, 255, 255, 0.7)", // Glow effect
-            }}
-          />
-          <div
-            style={{
-              width: 100,
-              height: 100,
-              backgroundImage: "url('./imgs/2.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              boxShadow: "0 0 15px rgba(255, 255, 255, 0.7)", // Glow effect
-            }}
-          />
-          <div
-            style={{
-              width: 100,
-              height: 100,
-              backgroundImage: "url('./imgs/4.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              boxShadow: "0 0 15px rgba(255, 255, 255, 0.7)", // Glow effect
-            }}
-          />
-        </div>
-
-        <br />
-        <p>
-        <div
-              style={{
-                display: "inline-block", // ✅ 추가
-                backgroundImage: `url('./imgs/admintext.png')`,
-                height: "50px",
-                width: "100%",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-            <div
-              style={{
-                display: "inline-block", // ✅ 추가
-                backgroundImage: `url('./imgs/KakaoTalk_20250405_215329281.jpg')`,
-                height: "50px",
-                width: "50px",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                borderRadius: "50%",
-              }}
-            />
-          <br /> Ulbo767
-        </p>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: "10px", // Add spacing between images
-          }}
-        >
-          <div
-            style={{
-              width: 100,
-              height: 100,
-              backgroundImage: "url('./imgs/3.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              boxShadow: "0 0 15px rgba(255, 255, 255, 0.7)", // Glow effect
-            }}
-          />
-        </div>
+        <Section
+          titleImage="./imgs/admintext.png"
+          names="Ulbo767"
+          avatars={["./imgs/KakaoTalk_20250405_215329281.jpg"]}
+          images={["./imgs/3.png"]}
+        />
         <br />
         <Script
           src="https://apis.google.com/js/platform.js"
           strategy="lazyOnload"
         />
-
         <div
           className="g-ytsubscribe"
           data-channelid="UCotH0xSYNno4_C-cFL9t1Sg"
           data-layout="default"
           data-count="default"
-        ></div>
-        <br />
+        />
       </main>
 
+      {/* FOOTER */}
       <footer
         style={{
           backgroundColor: "#1f1f1f",
@@ -307,5 +189,72 @@ export default function Home() {
         <p>&copy; 2025 Globed Korea Server. All Rights Reserved.</p>
       </footer>
     </div>
+  );
+}
+
+function Section({ titleImage, names, avatars, images }) {
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          marginTop: "40px",
+        }}
+      >
+        <div
+          style={{
+            backgroundImage: `url('${titleImage}')`,
+            height: "50px",
+            width: "150px",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        />
+        {avatars.map((src, i) => (
+          <div
+            key={i}
+            style={{
+              backgroundImage: `url('${src}')`,
+              height: "50px",
+              width: "50px",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              borderRadius: "50%",
+            }}
+          />
+        ))}
+      </div>
+      <div style={{ marginTop: "10px" }}>{names}</div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "10px",
+          marginTop: "10px",
+        }}
+      >
+        {images.map((src, i) => (
+          <div
+            key={i}
+            style={{
+              width: 100,
+              height: 100,
+              backgroundImage: `url('${src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              boxShadow: "0 0 15px rgba(255, 255, 255, 0.7)",
+            }}
+          />
+        ))}
+      </div>
+    </>
   );
 }
