@@ -4,28 +4,7 @@ import Link from "next/link";
 import banner from "./banner.jpg";
 import Script from "next/script";
 import background from "./background.jpg";
-import { useEffect, useState } from "react";
 export default function Home() {
-  const [pingResult, setPingTime] = useState(null);
-
-  const fetchPing = async () => {
-    try {
-      const response = await fetch('http://www.globedkoreaserver.shop/api/ping');
-      const data = await response.json();
-      setPingTime(data.time); // Ping 응답 시간 업데이트
-    } catch (error) {
-      console.error('Ping 요청 실패:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPing(); // 컴포넌트가 처음 렌더링 될 때 한번 호출
-
-    const intervalId = setInterval(fetchPing, 5000); // 2초마다 핑 요청
-
-    // 컴포넌트가 언마운트 될 때 interval 해제
-    return () => clearInterval(intervalId);
-  }, []);
 
   return (
     <div
@@ -263,13 +242,6 @@ export default function Home() {
           data-count="default"
         ></div>
         <br />
-        <div>
-          {pingResult !== null ? (
-            <p>Ping: {pingResult} ms</p>
-          ) : (
-            <p>Loading...</p>
-          )}
-        </div>
       </main>
 
       <footer
