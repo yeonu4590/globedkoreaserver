@@ -202,12 +202,14 @@ export default function Home() {
           <br />
           <big>Admin</big> <br /> Ulbo767
           <br></br>
-          <img
-            src="./imgs/3.png"
-            width={100}
-            height={100}
+          <div
             style={{
-              margin: "10px",
+              width: 100,
+              height: 100,
+              backgroundImage: "url('./imgs/3.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              margin: 10,
             }}
           />
         </small>
