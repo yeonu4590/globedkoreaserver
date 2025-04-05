@@ -157,19 +157,33 @@ export default function Home() {
           http://gd.globedkoreaserver.shop:4201
         </div>
         <h1>v.Beta0.1</h1>
-        <div style={{ color: "#a0aec0", fontSize: "1rem" }}>
+        <div style={{fontSize: "1.3rem" }}>
           Since 2025.01.27
         </div>
-        <small style={{ color: "#a0aec0", fontSize: "0.9rem" }}>
+        <small style={{fontSize: "0.9rem" }}>
           Owner : 이연우
           <br />
           Developer : QuverT, 이연우
         </small>
         <br />
-        <small style={{ color: "#a0aec0", fontSize: "0.9rem" }}>
-          Mod : 이연우, QuverT, DDOS
+        <small style={{fontSize: "0.9rem" }}>
+          <big>Mod</big> <br /> 이연우, QuverT, DDOS
           <br />
-          Admin : Ulbo767
+          <img src="./imgs/1.png" width={100} height={100} style={{
+            margin: "10px",
+          }}/>
+          <img src="./imgs/2.png" width={100} height={100} style={{
+            margin: "10px",
+          }}/>
+          <img src="./imgs/4.png" width={100} height={100} style={{
+            margin: "10px",
+          }}/>
+          <br />
+          <big>Admin</big> <br /> Ulbo767
+          <br></br>
+          <img src="./imgs/3.png" width={100} height={100} style={{
+            margin: "10px",
+          }}/>
         </small>
         <br />
         <Script
