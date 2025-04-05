@@ -167,7 +167,6 @@ export default function Home() {
         <small style={{ fontSize: "0.9rem" }}>
           <big>Mod</big> <br /> 이연우, QuverT, DDOS
         </small>
-        <br />
         <div
           style={{
             display: "flex",
@@ -205,7 +204,7 @@ export default function Home() {
             }}
           />
         </div>
-
+            <br />
         <small style={{ fontSize: "0.9rem" }}>
           <big>Admin</big> <br /> Ulbo767
         </small>
