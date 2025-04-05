@@ -9,6 +9,10 @@ body {
   display: none;
 }
 
-img {
-  gap: 10px;
+.divider {
+  width: 50%;
+  background: linear-gradient(to right, transparent, 25%, #fcdeff, 75%, transparent);
+    height: .2em;
+  border-radius: 2px;
+  margin: 2em 0;
 }

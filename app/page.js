@@ -163,8 +163,25 @@ export default function Home() {
           Developer : QuverT, 이연우
         </small>
         <br />
+        <div className="divider" />
+
         <small style={{ fontSize: "0.9rem" }}>
-          <big>Mod</big> <br /> 이연우, QuverT, DDOS
+          <span>
+            <img
+              style={{
+                height: "50px",
+              }}
+              src={"./imgs/modtext.png"}
+            />
+            <img
+              height={"50px"}
+              src={"./imgs/KakaoTalk_20250405_215329281_01.jpg"}
+              style={{
+                borderRadius: "50%",
+              }}
+            />
+          </span>
+          <br /> 이연우, QuverT, DDOS
         </small>
         <br />
         <div
@@ -208,10 +225,22 @@ export default function Home() {
         </div>
 
         <br />
-        <small style={{ fontSize: "0.9rem" }}>
-          <big>Admin</big> <br /> Ulbo767
-        </small>
-        <br />
+        <p>
+          <img
+            style={{
+              height: "50px",
+            }}
+            src={"./imgs/admintext.png"}
+          />
+          <img
+            height={"50px"}
+            src={"./imgs/KakaoTalk_20250405_215329281.jpg"}
+            style={{
+              borderRadius: "50%",
+            }}
+          />
+          <br /> Ulbo767
+        </p>
 
         <div
           style={{
