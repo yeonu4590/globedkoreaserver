@@ -157,33 +157,59 @@ export default function Home() {
           http://gd.globedkoreaserver.shop:4201
         </div>
         <h1>v.Beta0.1</h1>
-        <div style={{fontSize: "1.3rem" }}>
-          Since 2025.01.27
-        </div>
-        <small style={{fontSize: "0.9rem" }}>
+        <div style={{ fontSize: "1.3rem" }}>Since 2025.01.27</div>
+        <small style={{ fontSize: "0.9rem" }}>
           Owner : 이연우
           <br />
           Developer : QuverT, 이연우
         </small>
         <br />
-        <small style={{fontSize: "0.9rem" }}>
+        <small style={{ fontSize: "0.9rem" }}>
           <big>Mod</big> <br /> 이연우, QuverT, DDOS
           <br />
-          <img src="./imgs/1.png" width={100} height={100} style={{
-            margin: "10px",
-          }}/>
-          <img src="./imgs/2.png" width={100} height={100} style={{
-            margin: "10px",
-          }}/>
-          <img src="./imgs/4.png" width={100} height={100} style={{
-            margin: "10px",
-          }}/>
+          <div style={{ display: "flex" }}>
+            <div
+              style={{
+                width: 100,
+                height: 100,
+                backgroundImage: "url('./imgs/1.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                margin: 10,
+              }}
+            />
+            <div
+              style={{
+                width: 100,
+                height: 100,
+                backgroundImage: "url('./imgs/2.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                margin: 10,
+              }}
+            />
+            <div
+              style={{
+                width: 100,
+                height: 100,
+                backgroundImage: "url('./imgs/4.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                margin: 10,
+              }}
+            />
+          </div>
           <br />
           <big>Admin</big> <br /> Ulbo767
           <br></br>
-          <img src="./imgs/3.png" width={100} height={100} style={{
-            margin: "10px",
-          }}/>
+          <img
+            src="./imgs/3.png"
+            width={100}
+            height={100}
+            style={{
+              margin: "10px",
+            }}
+          />
         </small>
         <br />
         <Script
@@ -198,7 +224,6 @@ export default function Home() {
           data-count="default"
         ></div>
         <br />
-
       </main>
 
       <footer
