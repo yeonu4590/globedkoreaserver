@@ -10,7 +10,7 @@ export default function Home() {
 
   const fetchPing = async () => {
     try {
-      const response = await fetch('/api/ping');
+      const response = await fetch('http://www.globedkoreaserver.shop/api/ping');
       const data = await response.json();
       setPingTime(data.time); // Ping 응답 시간 업데이트
     } catch (error) {
