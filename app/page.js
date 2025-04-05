@@ -165,24 +165,35 @@ export default function Home() {
         <br />
         <div className="divider" />
 
-        <small style={{ fontSize: "0.9rem" }}>
+        <div>
           <span>
-            <img
+            <div
               style={{
+                display: "inline-block", // ✅ 추가
+                backgroundImage: `url('./imgs/modtext.png')`,
                 height: "50px",
+                width: "100%",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
               }}
-              src={"./imgs/modtext.png"}
             />
-            <img
-              height={"50px"}
-              src={"./imgs/KakaoTalk_20250405_215329281_01.jpg"}
+            <div
               style={{
+                display: "inline-block", // ✅ 추가
+                backgroundImage: `url('./imgs/KakaoTalk_20250405_215329281_01.jpg')`,
+                height: "50px",
+                width: "50px",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
                 borderRadius: "50%",
               }}
             />
           </span>
-          <br /> 이연우, QuverT, DDOS
-        </small>
+          <br />
+          이연우, QuverT, DDOS
+        </div>
+
         <br />
         <div
           style={{
@@ -226,19 +237,28 @@ export default function Home() {
 
         <br />
         <p>
-          <img
-            style={{
-              height: "50px",
-            }}
-            src={"./imgs/admintext.png"}
-          />
-          <img
-            height={"50px"}
-            src={"./imgs/KakaoTalk_20250405_215329281.jpg"}
-            style={{
-              borderRadius: "50%",
-            }}
-          />
+        <div
+              style={{
+                display: "inline-block", // ✅ 추가
+                backgroundImage: `url('./imgs/admintext.png')`,
+                height: "50px",
+                width: "100%",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <div
+              style={{
+                display: "inline-block", // ✅ 추가
+                backgroundImage: `url('./imgs/KakaoTalk_20250405_215329281.jpg')`,
+                height: "50px",
+                width: "50px",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                borderRadius: "50%",
+              }}
+            />
           <br /> Ulbo767
         </p>
 
