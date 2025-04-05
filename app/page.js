@@ -166,42 +166,57 @@ export default function Home() {
         <br />
         <small style={{ fontSize: "0.9rem" }}>
           <big>Mod</big> <br /> 이연우, QuverT, DDOS
-          <br />
-          <div style={{ display: "flex" }}>
-            <div
-              style={{
-                width: 100,
-                height: 100,
-                backgroundImage: "url('./imgs/1.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                margin: 10,
-              }}
-            />
-            <div
-              style={{
-                width: 100,
-                height: 100,
-                backgroundImage: "url('./imgs/2.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                margin: 10,
-              }}
-            />
-            <div
-              style={{
-                width: 100,
-                height: 100,
-                backgroundImage: "url('./imgs/4.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                margin: 10,
-              }}
-            />
-          </div>
-          <br />
+        </small>
+        <br />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "10px", // Add spacing between images
+          }}
+        >
+          <div
+            style={{
+              width: 100,
+              height: 100,
+              backgroundImage: "url('./imgs/1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          <div
+            style={{
+              width: 100,
+              height: 100,
+              backgroundImage: "url('./imgs/2.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          <div
+            style={{
+              width: 100,
+              height: 100,
+              backgroundImage: "url('./imgs/4.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </div>
+
+        <small style={{ fontSize: "0.9rem" }}>
           <big>Admin</big> <br /> Ulbo767
-          <br></br>
+        </small>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "10px", // Add spacing between images
+          }}
+        >
           <div
             style={{
               width: 100,
@@ -209,10 +224,9 @@ export default function Home() {
               backgroundImage: "url('./imgs/3.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              margin: 10,
             }}
           />
-        </small>
+        </div>
         <br />
         <Script
           src="https://apis.google.com/js/platform.js"
