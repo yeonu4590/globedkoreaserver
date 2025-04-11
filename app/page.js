@@ -46,7 +46,14 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <div style={{ color: "#d1d1d1", fontSize: "24px", fontWeight: "600" }}>
+        <div
+          style={{
+            color: "#d1d1d1",
+            fontSize: "24px",
+            fontWeight: "600",
+            fontFamily: "consolas",
+          }}
+        >
           Globed Korea Server
         </div>
         <nav style={{ display: "flex", gap: "30px", fontSize: "16px" }}>
@@ -109,76 +116,87 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <main
         style={{
+          backgroundImage: `url(${background.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          padding: "60px 20px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          padding: "60px 20px",
-          backgroundImage: `url(${background.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          backgroundAttachment: "fixed",
         }}
       >
-        <div className="divider" />
-        <p>이 서버는 dank_meme에 의해 만들어지거나 승인받지 않았습니다.</p>
+        <p style={{ opacity: 0.8 }}>
+          이 서버는 dank_meme에 의해 만들어지거나 승인받지 않았습니다.
+        </p>
 
         <div
           style={{
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            width: "90%",
-            maxWidth: "600px",
+            backgroundColor: "rgba(255, 255, 255, 0.08)",
             padding: "20px",
-            borderRadius: "8px",
-            backdropFilter: "blur(5px)",
-            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)",
+            borderRadius: "12px",
+            backdropFilter: "blur(8px)",
+            margin: "20px 0",
             fontSize: "1.5rem",
             color: "#e2e2e2",
-            fontFamily: "consolas",
+            fontFamily: "monospace",
             wordBreak: "break-word",
+            boxShadow: "0 8px 24px rgba(0, 0, 0, 0.4)",
+            textShadow:
+              "0 0 8px rgba(255, 255, 255, 0.5), 0 0 16px rgba(255, 255, 255, 0.3)",
           }}
         >
           http://gd.globedkoreaserver.shop:4201
         </div>
 
-        <h1>v.Beta0.1</h1>
-        <div style={{ fontSize: "1.3rem" }}>Since 2025.01.27</div>
-        <small style={{ fontSize: "0.9rem" }}>
+        <h1 style={{ marginTop: "20px" }}>v.Beta0.1</h1>
+        <div style={{ fontSize: "1.2rem", marginBottom: "8px" }}>
+          Since 2025.01.27
+        </div>
+        <small style={{ opacity: 0.7, fontSize: "0.95rem" }}>
           Owner : 이연우
           <br />
           Developer : QuverT, 이연우
         </small>
-        <br />
+
         <Link
+          href="https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92"
           style={{
-            color: "white",
-            padding: "10px",
-            border: "#ffffff solid 1px",
+            marginTop: "24px",
+            padding: "10px 20px",
+            border: "1px dashed white",
             borderRadius: "10px",
-            textDecorationStyle: "dashed",
+            color: "white",
+            textDecoration: "none",
+            transition: "all 0.3s ease",
           }}
-          href={
-            "https://gelatinous-glazer-cf4.notion.site/Globed-Korea-Server-1887b21aa01b80279f63cf5eef30cf92"
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.backgroundColor = "#ffffff11")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.backgroundColor = "transparent")
           }
         >
           서버에 대한 정보 (필독)
         </Link>
-        <div className="divider" />
-        <big>서버 사양</big>
-        <ul>
+
+        <hr style={{ width: "60%", margin: "40px auto", opacity: 0.2 }} />
+
+        <big style={{ fontSize: "1.4rem" }}>서버 사양</big>
+        <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8" }}>
           <li>
-            <strong>CPU</strong>: Intel Celeron N4505 (4코어, 2.0GHz)
+            <strong>CPU:</strong> Intel Celeron N4505 (4코어, 2.0GHz)
           </li>
           <li>
-            <strong>RAM</strong>: 8GB DDR4 SODIMM
+            <strong>RAM:</strong> 8GB DDR4 SODIMM
           </li>
           <li>
-            <strong>Ethernet Cable</strong>: CAT7
+            <strong>Ethernet Cable:</strong> CAT7
           </li>
         </ul>
 
-        <div className="divider" />
+        <hr style={{ width: "60%", margin: "40px auto", opacity: 0.2 }} />
 
         <Section
           titleImage="./imgs/modtext.png"
@@ -210,7 +228,6 @@ export default function Home() {
           data-layout="default"
           data-count="default"
         />
-        <div className="divider" />
       </main>
 
       {/* FOOTER */}
