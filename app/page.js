@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import banner from "./banner.jpg";
 import background from "./background.jpg";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -217,6 +218,17 @@ export default function Home() {
             "data:image/png;base64,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",
           ]}
         />
+        <hr style={{ width: "60%", margin: "40px auto", opacity: 0.2 }} />
+        <br />
+        <Image
+          src="/imgs/globedmainmenu.png"
+          alt="Globed Main Menu"
+          width="0"
+          height="0"
+          sizes="80vw"
+          style={{ width: "80%", height: "auto" }}
+        />
+
         <br />
         <Script
           src="https://apis.google.com/js/platform.js"
