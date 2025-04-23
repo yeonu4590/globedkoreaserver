@@ -187,7 +187,7 @@ export default function Home() {
         <big style={{ fontSize: "1.4rem" }}>서버 사양</big>
         <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8" }}>
           <li>
-            <strong>CPU:</strong> Intel Celeron N4505 (4코어, 2.0GHz)
+            <strong>CPU:</strong> Intel Celeron N4505 (2코어, 2.0GHz)
           </li>
           <li>
             <strong>RAM:</strong> 8GB DDR4 SODIMM
