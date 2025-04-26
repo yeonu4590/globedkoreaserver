@@ -148,7 +148,7 @@ export default function Home() {
               "0 0 8px rgba(255, 255, 255, 0.5), 0 0 16px rgba(255, 255, 255, 0.3)",
           }}
         >
-          http://gd.globedkoreaserver.shop:4201
+          http://gd.globedkoreaserver.shop/
         </div>
 
         <h1 style={{ marginTop: "20px" }}>v.Beta0.1</h1>
